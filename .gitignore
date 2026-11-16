@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Secrets
+.env
+*.token
+
+# Data: never commit receipt images or dataset archives
+data/raw/
+data/processed/
+*.zip
+*.tar
+*.tar.gz
+
+# Model artefacts
+checkpoints/
+outputs/
+adapters/
+*.safetensors
+*.bin
+*.gguf
+results/**/unsloth_tmp/
+results/**/smoke_input.jpg
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep result JSON files: they are the evidence behind each decision.
+!results/**/*.json
