@@ -1,0 +1,132 @@
+{
+  "test": "smoke_vllm",
+  "model": "Qwen/Qwen3-VL-4B-Instruct",
+  "args": {
+    "model": "Qwen/Qwen3-VL-4B-Instruct",
+    "image": null,
+    "max_side": 1280,
+    "max_model_len": 4096,
+    "max_tokens": 256,
+    "gpu_mem": 0.85,
+    "repeats": 5,
+    "batch": 8,
+    "enforce_eager": false,
+    "out_dir": "/kaggle/working/vietnamese-receipt-vlm/results/phase0"
+  },
+  "env": {
+    "python": "3.13.16",
+    "packages": {
+      "torch": "2.14.0",
+      "transformers": "5.20.2",
+      "vllm": "0.34.0",
+      "xgrammar": "0.2.8",
+      "unsloth": null,
+      "unsloth_zoo": null,
+      "trl": null,
+      "peft": "0.21.2",
+      "bitsandbytes": null,
+      "accelerate": "1.15.0"
+    },
+    "torch_available": true,
+    "cuda_available": true,
+    "torch_cuda": "13.0",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "Tesla T4",
+        "compute_capability": "7.5",
+        "memory_total_gib": 14.56,
+        "bf16_native": false
+      }
+    ]
+  },
+  "status": "ok",
+  "started_at": "2026-11-17T17:07:45+0000",
+  "image_source": "synthetic(seed=0)",
+  "target": {
+    "seller": "BÁCH HÓA XANH CẦU GIẤY",
+    "address": "216 Trần Phú, phường Bách Khoa, Nha Trang",
+    "timestamp": "26/07/2026 16:30",
+    "total_cost": "99.500đ"
+  },
+  "image_size": [
+    640,
+    668
+  ],
+  "load_seconds": 265.3,
+  "gpu_memory_after_load": [
+    {
+      "index": 0,
+      "name": "Tesla T4",
+      "memory_used_mib": 10933,
+      "memory_total_mib": 15360
+    },
+    {
+      "index": 1,
+      "name": "Tesla T4",
+      "memory_used_mib": 0,
+      "memory_total_mib": 15360
+    }
+  ],
+  "free_form": {
+    "latency_s_mean": 3.755,
+    "latency_s_min": 3.549,
+    "latency_s_max": 4.005,
+    "output_tokens_mean": 82,
+    "decode_tokens_per_s": 21.8,
+    "raw": "{\n  \"seller\": \"BÁCH HÓA XANH CẦU GIÃY\",\n  \"address\": \"216 Trần Phú, phường Bách Khoa, Nha Trang\",\n  \"timestamp\": \"26/07/2026 16:30\",\n  \"total_cost\": \"99.500đ\"\n}",
+    "parsed": {
+      "seller": "BÁCH HÓA XANH CẦU GIÃY",
+      "address": "216 Trần Phú, phường Bách Khoa, Nha Trang",
+      "timestamp": "26/07/2026 16:30",
+      "total_cost": "99.500đ"
+    },
+    "parse_error": null,
+    "json_valid": true,
+    "exact_match": {
+      "seller": false,
+      "address": true,
+      "timestamp": true,
+      "total_cost": true
+    }
+  },
+  "structured": {
+    "latency_s": 4.939,
+    "raw": "{\n  \"seller\": \"BÁCH HÓA XANH CẦU GIÃY\",\n  \"address\": \"216 Trần Phú, phường Bách Khoa, Nha Trang\",\n  \"timestamp\": \"26/07/2026 16:30\",\n  \"total_cost\": \"99.500đ\"\n}",
+    "parsed": {
+      "seller": "BÁCH HÓA XANH CẦU GIÃY",
+      "address": "216 Trần Phú, phường Bách Khoa, Nha Trang",
+      "timestamp": "26/07/2026 16:30",
+      "total_cost": "99.500đ"
+    },
+    "parse_error": null,
+    "json_valid": true,
+    "exact_match": {
+      "seller": false,
+      "address": true,
+      "timestamp": true,
+      "total_cost": true
+    }
+  },
+  "batch": {
+    "size": 8,
+    "seconds": 5.171,
+    "images_per_s": 1.55,
+    "output_tokens_per_s": 126.9
+  },
+  "gpu_memory_peak_seen": [
+    {
+      "index": 0,
+      "name": "Tesla T4",
+      "memory_used_mib": 10989,
+      "memory_total_mib": 15360
+    },
+    {
+      "index": 1,
+      "name": "Tesla T4",
+      "memory_used_mib": 0,
+      "memory_total_mib": 15360
+    }
+  ],
+  "finished_at": "2026-11-17T17:12:58+0000"
+}

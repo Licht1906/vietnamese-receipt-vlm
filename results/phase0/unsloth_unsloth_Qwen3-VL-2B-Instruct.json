@@ -1,0 +1,95 @@
+{
+  "test": "smoke_unsloth",
+  "model": "unsloth/Qwen3-VL-2B-Instruct",
+  "args": {
+    "model": "unsloth/Qwen3-VL-2B-Instruct",
+    "steps": 10,
+    "n_samples": 8,
+    "max_side": 1024,
+    "max_length": 2048,
+    "lora_r": 16,
+    "grad_accum": 2,
+    "finetune_vision": true,
+    "save_adapter": null,
+    "out_dir": "/kaggle/working/vietnamese-receipt-vlm/results/phase0"
+  },
+  "env": {
+    "python": "3.13.16",
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.17.0",
+      "vllm": null,
+      "xgrammar": null,
+      "unsloth": "2026.11.6",
+      "unsloth_zoo": "2026.11.6",
+      "trl": "1.15.0",
+      "peft": "0.21.2",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.15.0"
+    },
+    "torch_available": true,
+    "cuda_available": true,
+    "torch_cuda": "13.0",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "Tesla T4",
+        "compute_capability": "7.5",
+        "memory_total_gib": 14.56,
+        "bf16_native": false
+      }
+    ]
+  },
+  "status": "ok",
+  "started_at": "2026-11-18T06:28:39+0000",
+  "precision": "fp16",
+  "load_seconds": 14.7,
+  "vram_after_load_gib": 2.34,
+  "trainable_params_m": 23.72,
+  "train": {
+    "steps": 10,
+    "seconds": 64.7,
+    "seconds_per_step": 6.47,
+    "loss_first": 2.5570311546325684,
+    "loss_last": 1.1456785202026367,
+    "losses": [
+      2.5570311546325684,
+      2.545795440673828,
+      2.561345338821411,
+      1.936232328414917,
+      1.5575811862945557,
+      1.3803327083587646,
+      1.3224644660949707,
+      1.2241184711456299,
+      1.231149435043335,
+      1.1456785202026367
+    ],
+    "train_loss": 1.7461729049682617
+  },
+  "vram_peak_gib": 2.73,
+  "generation": {
+    "seconds": 18.99,
+    "raw": "{\"seller\": \"BÁCH HÓA XANH CẦU GIẤY\", \"address\": \"216 Trần Phú, phường Bách Khoa, Nha Trang\", \"timestamp\": \"26/07/2026 16:30\", \"total_cost\": \"99.500đ\"}",
+    "parsed": {
+      "seller": "BÁCH HÓA XANH CẦU GIẤY",
+      "address": "216 Trần Phú, phường Bách Khoa, Nha Trang",
+      "timestamp": "26/07/2026 16:30",
+      "total_cost": "99.500đ"
+    },
+    "parse_error": null,
+    "json_valid": true,
+    "target": {
+      "seller": "BÁCH HÓA XANH CẦU GIẤY",
+      "address": "216 Trần Phú, phường Bách Khoa, Nha Trang",
+      "timestamp": "26/07/2026 16:30",
+      "total_cost": "99.500đ"
+    },
+    "exact_match": {
+      "seller": true,
+      "address": true,
+      "timestamp": true,
+      "total_cost": true
+    }
+  },
+  "finished_at": "2026-11-18T06:30:18+0000"
+}

@@ -1,4 +1,4 @@
-# viet-receipt-vlm
+# vietnamese-receipt-vlm
 
 Key-information extraction from mobile-captured **Vietnamese receipts**: an OCR pipeline vs. a zero-shot
 vision-language model vs. a **LoRA-fine-tuned VLM**, with error analysis, hallucination checks and
@@ -15,7 +15,7 @@ Fields extracted (MC-OCR 2021 schema):
 
 ## Status
 
-- [ ] **Phase 0** – Environment & risk check (vLLM + Unsloth on Kaggle T4) → `docs/decisions.md`
+- [x] **Phase 0** – Environment & risk check (vLLM + Unsloth on Kaggle T4) → ADR-001 in `docs/decisions.md`: Qwen3-VL-2B
 - [ ] **Phase 1** – Data (MC-OCR 2021), store-disjoint split, text normalisation, metrics
 - [ ] **Phase 2** – Baselines: PaddleOCR + VietOCR (+ rules / + LLM), zero-shot VLM
 - [ ] **Phase 3** – LoRA fine-tuning + ablations (resolution, model size, vision layers, data size)
@@ -45,7 +45,7 @@ In both: *Settings → Accelerator → GPU T4 x2*, *Internet → On*.
 **Session A – vLLM serving** (`notebooks/00a_smoke_vllm.ipynb`)
 
 ```bash
-git clone https://github.com/<your-username>/viet-receipt-vlm.git && cd viet-receipt-vlm
+git clone https://github.com/Licht1906/vietnamese-receipt-vlm.git && cd vietnamese-receipt-vlm
 pip install -q "vllm>=0.11.0"
 pip install -q -e . --no-deps
 python scripts/check_env.py
@@ -56,7 +56,7 @@ PRIMARY=Qwen/Qwen3-VL-4B-Instruct bash scripts/run_phase0_vllm.sh   # optional: 
 **Session B – Unsloth training** (`notebooks/00b_smoke_unsloth.ipynb`)
 
 ```bash
-git clone https://github.com/<your-username>/viet-receipt-vlm.git && cd viet-receipt-vlm
+git clone https://github.com/Licht1906/vietnamese-receipt-vlm.git && cd vietnamese-receipt-vlm
 pip install -q --upgrade unsloth unsloth_zoo
 pip install -q -e . --no-deps
 python scripts/check_env.py
